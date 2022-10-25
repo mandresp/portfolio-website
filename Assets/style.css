@@ -1,0 +1,42 @@
+* {
+    font-family: Oswald;
+    box-sizing: border-box;
+    --main: #B4ECEF;
+    --secondary: #6636D4;
+}
+
+.header {
+    background-color: var(--secondary);
+}
+
+.header h1 {
+    display: inline-block;
+    font-size: 48px;
+    padding-left: 25px;
+}
+
+.Andres {
+    color: var(--main);
+}
+
+.header nav {
+    float: right;
+    margin-left: 20px;
+}
+
+.header nav ul {
+    list-style-type: none;
+    color: var(--main);
+}
+
+.header nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 50px;
+    margin-right: 25px;
+}
+
+a, a:visited {
+    color: var(--main);
+    font-weight: bold;
+}
