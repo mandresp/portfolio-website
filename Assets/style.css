@@ -40,3 +40,12 @@ a, a:visited {
     color: var(--main);
     font-weight: bold;
 }
+
+.me {
+    height: 600px;
+    width: 50%;
+    margin-bottom: 25px;
+    background-image: url("./Images/311324380_516899916576237_6413785812201432744_n.jpg");
+    background-size: cover;
+    background-position: center;
+}
