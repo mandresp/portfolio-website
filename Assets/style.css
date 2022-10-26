@@ -199,6 +199,6 @@ a:visited {
     }
     /* I used the same fix for the images as at 768px, however now the nav bar is not positioned correctly. */
     .header nav {
-        margin-left: -20px;
+        /* margin-left: -20px; */
     }
 }
