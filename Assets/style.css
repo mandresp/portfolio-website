@@ -184,6 +184,13 @@ a:visited {
         margin-right: 15px;
     }
     /* The only thing that seemed out of place at this size was the the text in the about me section text was too close to close to the right side of the page so I added a margin */
+    .img-1 {
+            max-width: 850px;
+    }
+    .img-2,
+    .img-3 {
+        max-width: 425px;
+    }
 }
 
 @media screen and (max-width: 768px) {
