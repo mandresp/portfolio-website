@@ -191,6 +191,7 @@ a:visited {
     .img-3 {
         max-width: 425px;
     }
+    /* Added differing max widths to ensure that the first image stays larger. */
 }
 
 @media screen and (max-width: 768px) {
