@@ -7,7 +7,8 @@
     --text: #1D2023;
 }
 
-.header, .footer {
+.header,
+.footer {
     background-color: var(--secondary);
 }
 
@@ -56,7 +57,8 @@
     text-decoration: none;
 }
 
-.header nav ul li a, a:visited {
+.header nav ul li a,
+a:visited {
     color: var(--main);
     font-weight: bold;
     text-decoration: none;
@@ -67,7 +69,9 @@
     color: var(--text);
 }
 
-.contact a, .resume a, .resume h2 {
+.contact a,
+.resume a,
+.resume h2 {
     color: var(--text);
 }
 
@@ -127,7 +131,8 @@
     border-color: var(--secondary);
 }
 
-.post-2, .post-3 {
+.post-2,
+.post-3 {
     flex: 1 0 0;
     position: relative;
     background-color: var(--secondary);
@@ -137,17 +142,24 @@
     border-color: var(--secondary);
 }
 
-.post-1:hover, .post-2:hover, .post-3:hover {
+.post-1:hover,
+.post-2:hover,
+.post-3:hover {
     background-color: var(--tertiary);
     text-decoration: none;
 }
 
-.post-1 h3, .post-2 h3, .post-3 h3, .post-1 a {
+.post-1 h3,
+.post-2 h3,
+.post-3 h3,
+.post-1 a {
     position: relative;
     top: 2px;
     color: var(--main);
 }
 
-.img-1, .img-2, .img-3 {
+.img-1,
+.img-2,
+.img-3 {
     border-radius: 10px;
 }
