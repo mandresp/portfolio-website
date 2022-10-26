@@ -102,6 +102,12 @@
     border-color: var(--secondary);
 }
 
+.img-1,
+.img-2,
+.img-3 {
+    height: 400px;
+}
+
 .post-1 {
     flex: 2 0 0;
     flex-basis: 100%;
@@ -128,13 +134,10 @@
     text-decoration: none;
 }
 
-.post-1 h4, .post-2 h4, .post-3 h4 {
+.post-1 h3, .post-2 h3, .post-3 h3 {
     position: relative;
-    bottom: 10px;
-}
-.post-1 a, .post-2 a, .post-3 a {
-    position: relative;
-    bottom: 20px;
+    top: 2px;
+    color: var(--main);
 }
 
 .img-1, .img-2, .img-3 {
