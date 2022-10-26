@@ -64,9 +64,10 @@
 
 .resume {
     padding-bottom: 10px;
+    color: var(--text);
 }
 
-.contact a, .resume a {
+.contact a, .resume a, .resume h2 {
     color: var(--text);
 }
 
@@ -75,6 +76,7 @@
     width: 100%;
     margin-bottom: 25px;
     background-image: url("./Images/311324380_516899916576237_6413785812201432744_n.jpg");
+    /* Background image is a photo of myself, Marcelo Andres Perez. */
     background-size: cover;
     background-position: center;
 }
@@ -100,6 +102,12 @@
     flex-wrap: wrap;
     padding-bottom: 20px;
     border-color: var(--secondary);
+}
+
+.posts a {
+    position: relative;
+    text-align: center;
+    color: var(--main);
 }
 
 .img-1,
@@ -134,7 +142,7 @@
     text-decoration: none;
 }
 
-.post-1 h3, .post-2 h3, .post-3 h3 {
+.post-1 h3, .post-2 h3, .post-3 h3, .post-1 a {
     position: relative;
     top: 2px;
     color: var(--main);
