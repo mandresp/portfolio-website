@@ -18,7 +18,7 @@ https://mandresp.github.io/portfolio-website/
 
 ## Screenshot of Website
 
-![Website Screenshot](./Develop/assets/images/Fullscreen Screenshot.png)
+![Website Screenshot](./Assets/Images/Fullscreen%20Screenshot.png)
 
 ## Credits
 
