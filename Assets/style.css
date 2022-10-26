@@ -110,7 +110,7 @@ a:visited {
 .posts {
     position: relative;
     text-align: center;
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     padding-bottom: 20px;
     border-color: var(--secondary);
@@ -199,6 +199,7 @@ a:visited {
     }
     /* I used the same fix for the images as at 768px, however now the nav bar is not positioned correctly. */
     .header nav {
-        /* margin-left: -20px; */
+        margin-left: -20px;
     }
+    /* This fixed the issue of the nav bar dropping down below the header. */
 }
