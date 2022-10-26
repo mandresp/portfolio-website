@@ -122,7 +122,11 @@ a:visited {
     color: var(--main);
 }
 
-.img-1,
+.img-1 {
+    max-width: 1600px;
+    /* The max width here is different from the second and third image so that it is larger than images 1 and 2. */
+}
+
 .img-2,
 .img-3 {
     max-height: 400px;
