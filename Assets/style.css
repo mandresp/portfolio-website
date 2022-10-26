@@ -56,18 +56,31 @@
     text-decoration: none;
 }
 
-a, a:visited {
+.header nav ul li a, a:visited {
     color: var(--main);
     font-weight: bold;
+    text-decoration: none;
+}
+
+.resume {
+    padding-bottom: 10px;
+}
+
+.contact a, .resume a {
+    color: var(--text);
 }
 
 .me {
     height: 600px;
-    width: 50%;
+    width: 100%;
     margin-bottom: 25px;
     background-image: url("./Images/311324380_516899916576237_6413785812201432744_n.jpg");
     background-size: cover;
     background-position: center;
+}
+
+.content {
+    background-color: var(--main);
 }
 
 .content h2 {
@@ -76,6 +89,54 @@ a, a:visited {
 }
 
 .content p {
-margin-left: 40px;
-color: var(--text);
+    margin-left: 40px;
+    color: var(--text);
+}
+
+.posts {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    border-color: var(--secondary);
+}
+
+.post-1 {
+    flex: 2 0 0;
+    flex-basis: 100%;
+    position: relative;
+    background-color: var(--secondary);
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: var(--secondary);
+}
+
+.post-2, .post-3 {
+    flex: 1 0 0;
+    position: relative;
+    background-color: var(--secondary);
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: var(--secondary);
+}
+
+.post-1:hover, .post-2:hover, .post-3:hover {
+    background-color: var(--tertiary);
+    text-decoration: none;
+}
+
+.post-1 h4, .post-2 h4, .post-3 h4 {
+    position: relative;
+    bottom: 10px;
+}
+.post-1 a, .post-2 a, .post-3 a {
+    position: relative;
+    bottom: 20px;
+}
+
+.img-1, .img-2, .img-3 {
+    border-radius: 10px;
 }
