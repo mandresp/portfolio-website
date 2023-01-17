@@ -1,92 +1,55 @@
-import React, { useState } from 'react';
-import './style.css';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
-// Here we import a helper function that will check if the email is valid
-import { checkPassword, validateEmail } from '../utils/helpers';
 
-function Form() {
-  // Create state variables for the fields in the form
-  // We are also setting their initial values to an empty string
-  const [email, setEmail] = useState('');
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+export default function Contact() {
 
-  const handleInputChange = (e) => {
-    // Getting the value and name of the input which triggered the change
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
+  const [formState, setFormState] = useState({
+    user_name: "",
+    user_email: "",
+    subject: "",
+    message: "",
+  });
 
-    // Based on the input type, we set the state of either email, username, and password
-    if (inputType === 'email') {
-      setEmail(inputValue);
-    } else if (inputType === 'userName') {
-      setUserName(inputValue);
-    } else {
-      setPassword(inputValue);
-    }
-  };
+  const [hiddenState, setHiddenState] = useState(true);
 
-  const handleFormSubmit = (e) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
+  const { user_name, user_email, subject, message } = formState;
+
+  function handleChange(e) {
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+  }
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
     e.preventDefault();
 
-    // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
-    if (!validateEmail(email) || !userName) {
-      setErrorMessage('Email or username is invalid');
-      // We want to exit out of this code block if something is wrong so that the user can correct it
-      return;
-      // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
-    }
-    if (!checkPassword(password)) {
-      setErrorMessage(
-        `Choose a more secure password for the account: ${userName}`
-      );
-      return;
-    }
-    alert(`Hello ${userName}`);
-
-    // If everything goes according to plan, we want to clear out the input after a successful registration.
-    setUserName('');
-    setPassword('');
-    setEmail('');
-  };
+    emailjs.sendForm(process.env.REACT_APP_service, 'template_wgugikn', form.current, process.env.REACT_APP_api)
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+    setFormState({user_name: "", user_email: "", subject: "", message: ""})
+    setHiddenState(false);
+  }
 
   return (
-    <div>
-      <p>Hello {userName}</p>
-      <form className="form">
-        <input
-          value={email}
-          name="email"
-          onChange={handleInputChange}
-          type="email"
-          placeholder="email"
-        />
-        <input
-          value={userName}
-          name="userName"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="username"
-        />
-        <input
-          value={password}
-          name="password"
-          onChange={handleInputChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button type="button" onClick={handleFormSubmit}>Submit</button>
-      </form>
-      {errorMessage && (
-        <div>
-          <p className="error-text">{errorMessage}</p>
-        </div>
-      )}
+  <form ref={form} onSubmit={sendEmail} className="contact-form">
+    <div className="user-info">
+      <input type="text" value={user_name} name="user_name" className="name-input" id="contact-name" placeholder='name' onChange={handleChange}></input>
+      <input type="email" value={user_email} name="user_email" className="email-input" id="contact-email" placeholder='email' onChange={handleChange}></input>
     </div>
+    <div className="message-content">
+      <input name="subject" value={subject} className="subject-input" id="contact-subject" placeholder='subject' onChange={handleChange}></input>
+      <textarea name="message" value={message} className="message-input" id="contact-message" placeholder='message' onChange={handleChange}></textarea>
+    </div>
+    <div className="send-button">
+      <input type="submit" value="send" id="send-email"/>
+    </div>
+    <div className= { hiddenState ? "hidden-toast" : ""}>
+      Sent
+    </div>
+  </form>
   );
-}
-
-export default Form;
+} 
