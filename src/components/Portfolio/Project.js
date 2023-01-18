@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-export default function Project({project}) {
+export default function Project({ project }) {
   return (
     <div className="container">
       <div className="card">
@@ -10,14 +10,14 @@ export default function Project({project}) {
           alt="Card cap"
         />
         <div className="card-body">
-        <h5 className="card-title">Name: {project.name}</h5>
-          <p className="card-text">Description: {project.description}</p>
-            <a href={project.repo} className="btn btn-primary">
-              See {project.name} GitHub repository.
-            </a>
-            <a href={project.deployed} className="btn btn-primary">
-              See {project.name} deployed application.
-            </a>
+          <h5 className="card-title">{project.name}</h5>
+          <p className="card-text">{project.description}</p>
+          <a href={project.repo} className="btn btn-primary">
+            See {project.name} GitHub repository.
+          </a>
+          <a href={project.deployed} className="btn btn-primary">
+            See {project.name} deployed application.
+          </a>
         </div>
       </div>
     </div>
